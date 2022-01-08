@@ -1,0 +1,29 @@
+update hr_payslip as aal
+set move_id = null
+from
+    (select aal.id
+     from hr_payslip aal
+     inner join account_move aml on aml.id = aal.move_id) A
+right join
+    (select id
+     from hr_payslip
+     where move_id is not null) B on A.id = B.id
+where A.id is null
+    and aal.id = B.id returning aal.id;
+
+    update hr_payslip as aal
+set slip_processing_id = null
+from
+    (select aal.id
+     from hr_payslip aal
+     inner join hr_payslip aml on aml.id = aal.slip_processing_id) A
+right join
+    (select id
+     from hr_payslip
+     where slip_processing_id is not null) B on A.id = B.id
+where A.id is null
+    and aal.id = B.id returning aal.id;
+    
+delete from product_taxes_rel where prod_id = 2;
+delete from product_supplier_taxes_rel where prod_id = 2;
+delete from stock_route_product where product_id = 2;

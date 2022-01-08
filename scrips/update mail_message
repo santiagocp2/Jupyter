@@ -1,0 +1,3 @@
+update mail_message set res_id = null where body like '%CONTROL DE CAMBIOS DEL COSTO PROMEDIO%';
+
+

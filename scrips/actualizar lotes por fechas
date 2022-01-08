@@ -1,0 +1,7 @@
+update product_template as pt
+set production_type = 'raw_material' 
+from product_product pp 
+inner join stock_production_lot spl on spl.product_id = pp.id
+where pp.product_tmpl_id = pt.id 
+and spl.create_uid = 669 
+and cast(spl.create_date as date) = '2021-09-27';

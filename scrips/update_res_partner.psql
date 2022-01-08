@@ -1,0 +1,1 @@
+update res_partner set vat = ref_num where vat is null and ref_num is not null;

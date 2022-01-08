@@ -1,0 +1,8 @@
+update product_pricelist set pricelist_type='public' where name ilike '%Public%';
+update product_pricelist set pricelist_type='01' where name ilike '%01%';
+update product_pricelist set pricelist_type='02' where name ilike '%02';
+update product_pricelist set pricelist_type='03' where name ilike '%03';
+update product_pricelist set pricelist_type='04' where name ilike '%04';
+update product_pricelist set pricelist_type='05' where name ilike '%05';
+update product_pricelist set pricelist_type='special' where name ilike '%Special%';
+update product_pricelist set pricelist_type='sodimac' where name ilike '%Sodimac%';
